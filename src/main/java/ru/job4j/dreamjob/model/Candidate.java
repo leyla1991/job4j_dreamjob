@@ -8,7 +8,11 @@ public class Candidate {
     private int id;
     private String name;
     private String description;
-    private LocalDateTime create;
+    private LocalDateTime create = LocalDateTime.now();
+
+    public Candidate() {
+
+    }
 
     public Candidate(int id, String name, String description, LocalDateTime create) {
         this.id = id;

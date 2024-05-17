@@ -7,10 +7,6 @@ import ru.job4j.dreamjob.model.Vacancy;
 import ru.job4j.dreamjob.repository.MemoryVacancyRepository;
 import ru.job4j.dreamjob.repository.VacancyRepository;
 
-import javax.servlet.http.HttpServletRequest;
-import java.net.http.HttpRequest;
-import java.time.LocalDateTime;
-
 @Controller
 @RequestMapping("/vacancies") /* Работать с кандидатами будем по URI /vacancies/** */
 public class VacancyController {
@@ -64,5 +60,4 @@ public class VacancyController {
         }
         return "redirect:/vacancies";
     }
-
 }
