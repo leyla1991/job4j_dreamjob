@@ -11,7 +11,11 @@ public class Vacancy {
 
     private String description;
 
-    private LocalDateTime create;
+    private LocalDateTime create = LocalDateTime.now();
+
+    public Vacancy() {
+
+    }
 
     public Vacancy(int id, String title, String description, LocalDateTime create) {
         this.id = id;
