@@ -6,9 +6,8 @@ import ru.job4j.dreamjob.model.Candidate;
 import java.time.LocalDateTime;
 import java.util.*;
 
+@Repository
 public class MemoryCandidateRepository implements CandidateRepository {
-
-    private static final MemoryCandidateRepository INSTANCE = new MemoryCandidateRepository();
 
     private int nextId = 1;
 
@@ -19,10 +18,6 @@ public class MemoryCandidateRepository implements CandidateRepository {
         save(new Candidate(0, "Brut", "he did", LocalDateTime.now()));
         save(new Candidate(0, "Cleaner", "cool guy", LocalDateTime.now()));
         save(new Candidate(0, "Sam Smith", "nice java-man", LocalDateTime.now()));
-    }
-
-    public static MemoryCandidateRepository getInstance() {
-        return INSTANCE;
     }
 
     @Override
