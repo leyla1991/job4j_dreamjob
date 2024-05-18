@@ -13,15 +13,18 @@ public class Vacancy {
 
     private LocalDateTime create = LocalDateTime.now();
 
+    private boolean visible;
+
     public Vacancy() {
 
     }
 
-    public Vacancy(int id, String title, String description, LocalDateTime create) {
+    public Vacancy(int id, String title, String description, LocalDateTime create, boolean visible) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.create = create;
+        this.visible = visible;
     }
 
     public LocalDateTime getCreate() {
@@ -54,6 +57,14 @@ public class Vacancy {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public boolean getVisible() {
+        return visible;
+    }
+
+    public void setVisible(boolean visible) {
+        this.visible = visible;
     }
 
     @Override
