@@ -14,8 +14,6 @@ public class SimpleCandidateService implements CandidateService {
 
     private final CandidateRepository candidateRepository = MemoryCandidateRepository.getInstance();
 
-    private final CandidateService candidateService = SimpleCandidateService.getInstance();
-
     public SimpleCandidateService() {
 
     }

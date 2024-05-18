@@ -14,8 +14,6 @@ public class SimpleVacancyService implements VacancyService {
 
     private final VacancyRepository vacancyRepository = MemoryVacancyRepository.getInstance();
 
-    private final VacancyService vacancyService = SimpleVacancyService.getInstance();
-
     private SimpleVacancyService() {
 
     }
