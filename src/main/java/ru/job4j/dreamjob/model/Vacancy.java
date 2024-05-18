@@ -15,16 +15,19 @@ public class Vacancy {
 
     private boolean visible;
 
+    private int cityId;
+
     public Vacancy() {
 
     }
 
-    public Vacancy(int id, String title, String description, LocalDateTime create, boolean visible) {
+    public Vacancy(int id, String title, String description, LocalDateTime create, boolean visible,  int cityId) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.create = create;
         this.visible = visible;
+        this.cityId = cityId;
     }
 
     public LocalDateTime getCreate() {
@@ -84,4 +87,11 @@ public class Vacancy {
         return Objects.hash(id);
     }
 
+    public int getCityId() {
+        return cityId;
+    }
+
+    public void setCityId(int cityId) {
+        this.cityId = cityId;
+    }
 }

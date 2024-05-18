@@ -10,15 +10,26 @@ public class Candidate {
     private String description;
     private LocalDateTime create = LocalDateTime.now();
 
+    public int getCityId() {
+        return cityId;
+    }
+
+    public void setCityId(int cityId) {
+        this.cityId = cityId;
+    }
+
+    private int cityId;
+
     public Candidate() {
 
     }
 
-    public Candidate(int id, String name, String description, LocalDateTime create) {
+    public Candidate(int id, String name, String description, LocalDateTime create, int cityId) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.create = create;
+        this.cityId = cityId;
     }
 
     public int getId() {

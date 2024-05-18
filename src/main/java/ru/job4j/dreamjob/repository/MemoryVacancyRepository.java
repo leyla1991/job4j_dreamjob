@@ -19,12 +19,12 @@ public class MemoryVacancyRepository implements VacancyRepository {
     private final Map<Integer, Vacancy> vacancies = new HashMap<>();
 
     private MemoryVacancyRepository() {
-        save(new Vacancy(0, "Intern Java Developer", "200_000, 24/7", LocalDateTime.now(), true));
-        save(new Vacancy(0, "Junior Java Developer", "000000", LocalDateTime.now(), true));
-        save(new Vacancy(0, "Junior+ Java Developer", "133443", LocalDateTime.now(), true));
-        save(new Vacancy(0, "Middle Java Developer", "Требуется джавист для хорошей зарплаты", LocalDateTime.now(), true));
-        save(new Vacancy(0, "Middle+ Java Developer", "Цель", LocalDateTime.now(), true));
-        save(new Vacancy(0, "Senior Java Developer", "Сапоги новые", LocalDateTime.now(), true));
+        save(new Vacancy(0, "Intern Java Developer", "200_000, 24/7", LocalDateTime.now(), true, 1));
+        save(new Vacancy(0, "Junior Java Developer", "000000", LocalDateTime.now(), true, 2));
+        save(new Vacancy(0, "Junior+ Java Developer", "133443", LocalDateTime.now(), true, 2));
+        save(new Vacancy(0, "Middle Java Developer", "Требуется джавист для хорошей зарплаты", LocalDateTime.now(), true, 3));
+        save(new Vacancy(0, "Middle+ Java Developer", "Цель", LocalDateTime.now(), true, 2));
+        save(new Vacancy(0, "Senior Java Developer", "Сапоги новые", LocalDateTime.now(), true, 1));
     }
 
     @Override
@@ -45,7 +45,7 @@ public class MemoryVacancyRepository implements VacancyRepository {
                 (id, oldVacancy) -> new Vacancy(oldVacancy.getId(),
                         vacancy.getTitle(),
                         vacancy.getDescription(),
-                        vacancy.getCreate(), vacancy.getVisible())) != null;
+                        vacancy.getCreate(), vacancy.getVisible(), vacancy.getCityId())) != null;
     }
 
     @Override
