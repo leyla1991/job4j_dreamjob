@@ -9,6 +9,8 @@ public class Candidate {
     private String name;
     private String description;
     private LocalDateTime create = LocalDateTime.now();
+    private int cityId;
+    private int fileId;
 
     public int getCityId() {
         return cityId;
@@ -18,18 +20,18 @@ public class Candidate {
         this.cityId = cityId;
     }
 
-    private int cityId;
-
     public Candidate() {
 
     }
 
-    public Candidate(int id, String name, String description, LocalDateTime create, int cityId) {
+    public Candidate(int id, String name, String description,
+                     LocalDateTime create, int cityId, int fileId) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.create = create;
         this.cityId = cityId;
+        this.fileId = fileId;
     }
 
     public int getId() {
@@ -79,5 +81,13 @@ public class Candidate {
     @Override
     public int hashCode() {
         return Objects.hashCode(id);
+    }
+
+    public int getFileId() {
+        return fileId;
+    }
+
+    public void setFileId(int fileId) {
+        this.fileId = fileId;
     }
 }
