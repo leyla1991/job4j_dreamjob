@@ -1,10 +1,12 @@
 package ru.job4j.dreamjob.repository;
 
+import net.jcip.annotations.ThreadSafe;
 import ru.job4j.dreamjob.model.Candidate;
 
 import java.util.Collection;
 import java.util.Optional;
 
+@ThreadSafe
 public interface CandidateRepository {
 
     Candidate save(Candidate candidate);
