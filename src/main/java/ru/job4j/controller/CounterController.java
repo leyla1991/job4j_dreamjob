@@ -12,7 +12,7 @@ public class CounterController {
     private final AtomicInteger total = new AtomicInteger();
 
     @GetMapping("/count")
-    public String count(){
+    public String count() {
         int value = total.incrementAndGet();
         return String.format("Total execute: %d", value);
     }
