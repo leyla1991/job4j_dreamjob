@@ -40,7 +40,7 @@ public class CandidateController {
     public String create(@ModelAttribute Candidate candidate, @RequestParam MultipartFile file, Model model) {
         try {
             candidateService.save(candidate, new FileDto(file.getOriginalFilename(), file.getBytes()));
-            return "redirect^/vacancies";
+            return "redirect:/vacancies";
         } catch (Exception e) {
             model.addAttribute("message", "Резюме с указанным идентификатором не найдено");
             return "errors/404";
