@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 import ru.job4j.dreamjob.model.Vacancy;
 import java.time.LocalDateTime;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
@@ -53,7 +52,7 @@ public class MemoryVacancyRepository implements VacancyRepository {
                 (id, oldVacancy) -> new Vacancy(oldVacancy.getId(),
                         vacancy.getTitle(),
                         vacancy.getDescription(),
-                        vacancy.getCreate(), vacancy.getVisible(),
+                        vacancy.getCreationDate(), vacancy.getVisible(),
                         vacancy.getCityId(), vacancy.getFileId())) != null;
     }
 

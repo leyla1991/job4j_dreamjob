@@ -18,7 +18,7 @@ public class Candidate {
     private int id;
     private String name;
     private String description;
-    private LocalDateTime create = LocalDateTime.now();
+    private LocalDateTime creationDate = LocalDateTime.now();
     private int cityId;
     private int fileId;
 
@@ -35,11 +35,11 @@ public class Candidate {
     }
 
     public Candidate(int id, String name, String description,
-                     LocalDateTime create, int cityId, int fileId) {
+                     LocalDateTime creationDate, int cityId, int fileId) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.create = create;
+        this.creationDate = creationDate;
         this.cityId = cityId;
         this.fileId = fileId;
     }
@@ -68,12 +68,12 @@ public class Candidate {
         this.description = description;
     }
 
-    public LocalDateTime getCreate() {
-        return create;
+    public LocalDateTime getCreationDate() {
+        return creationDate;
     }
 
-    public void setCreate(LocalDateTime create) {
-        this.create = create;
+    public void setCreationDate(LocalDateTime creationDate) {
+        this.creationDate = creationDate;
     }
 
     @Override

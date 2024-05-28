@@ -22,7 +22,7 @@ public class Vacancy {
 
     private String description;
 
-    private LocalDateTime create = LocalDateTime.now();
+    private LocalDateTime creationDate = LocalDateTime.now();
 
     private boolean visible;
 
@@ -34,23 +34,23 @@ public class Vacancy {
 
     }
 
-    public Vacancy(int id, String title, String description, LocalDateTime create,
+    public Vacancy(int id, String title, String description, LocalDateTime creationDate,
                    boolean visible,  int cityId, int fileId) {
         this.id = id;
         this.title = title;
         this.description = description;
-        this.create = create;
+        this.creationDate = creationDate;
         this.visible = visible;
         this.cityId = cityId;
         this.fileId = fileId;
     }
 
-    public LocalDateTime getCreate() {
-        return create;
+    public LocalDateTime getCreationDate() {
+        return creationDate;
     }
 
-    public void setCreate(LocalDateTime create) {
-        this.create = create;
+    public void setCreationDate(LocalDateTime creationDate) {
+        this.creationDate = creationDate;
     }
 
     public String getDescription() {

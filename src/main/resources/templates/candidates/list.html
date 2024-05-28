@@ -29,7 +29,7 @@
                 <tr th:each="candidate: ${candidates}">
                     <td th:text="${candidate.id}"/>
                     <td><a th:text="${candidate.name}" th:href="@{/candidates/{id}(id=${candidate.id})}"></a></td>
-                    <td th:text="${candidate.create}"></td>
+                    <td th:text="${candidate.creationDate}"></td>
                 </tr>
                 </tbody>
             </table>

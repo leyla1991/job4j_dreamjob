@@ -25,7 +25,7 @@ public class Sql2oCandidateRepository implements CandidateRepository {
             var query = connection.createQuery(sql, true)
                     .addParameter("name", candidate.getName())
                     .addParameter("description", candidate.getDescription())
-                    .addParameter("creationDate", candidate.getCreate())
+                    .addParameter("creationDate", candidate.getCreationDate())
                     .addParameter("cityId", candidate.getCityId())
                     .addParameter("fileId", candidate.getFileId());
             int generatedId = query.executeUpdate().getKey(Integer.class);
@@ -64,7 +64,7 @@ public class Sql2oCandidateRepository implements CandidateRepository {
     @Override
     public Optional<Candidate> findById(int id) {
         try (var connection = sql2o.open()) {
-            var query = connection.createQuery("SELECT name FROM candidates WHERE id = :id");
+            var query = connection.createQuery("SELECT * FROM candidates WHERE id = :id");
             query.addParameter("id", id);
             var candidate = query.setColumnMappings(Candidate.COLUMN_MAPPING).executeAndFetchFirst(Candidate.class);
             return Optional.ofNullable(candidate);
