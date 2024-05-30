@@ -37,10 +37,12 @@ public class Sql2oFileRepository implements FileRepository {
     }
 
     @Override
-    public void deleteById(int id) {
+    public boolean deleteById(int id) {
         try (var connection = sql2o.open()) {
             var query = connection.createQuery("DELETE FROM files WHERE id = :id");
             query.addParameter("id", id).executeUpdate();
+            var affectedRows = query.executeUpdate().getResult();
+            return affectedRows != 0;
         }
     }
 }

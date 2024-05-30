@@ -1,6 +1,6 @@
 create table candidates
 (
-    id            serial primary key,
+    id            serial primary key NOT NULL UNIQUE,
     name         varchar not null,
     description   varchar not null,
     creation_date timestamp,
